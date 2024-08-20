@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trailer Park Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <h1><i class="fas fa-truck-loading"></i> Trailer Park Management</h1>
+
+        <div id="content" style="display:flex;">
+            <div id="sidebar">
+                <div id="legend-container">
+                    <div id="color-legend">
+                        <h3><i class="fas fa-info-circle"></i> Legend</h3>
+                        <ul>
+                            <li><span class="legend-box green"></span> Empty Space (<span id="count-empty">0</span>)</li>
+                            <li><span class="legend-box empty"></span> Empty Trailer (<span id="count-empty-trailer">0</span>)</li>
+                            <li><span class="legend-box yellow"></span> Waste (<span id="count-waste">0</span>)</li>
+                            <li><span class="legend-box loaded"></span> Loaded (<span id="count-loaded">0</span>)</li>
+                            <li><span class="legend-box purple"></span> Defective (<span id="count-defective">0</span>)</li>
+                            <li><span class="legend-box unknown"></span> Unknown (<span id="count-unknown">0</span>)</li>
+                            <li><span class="legend-box pink"></span> Occupied (<span id="count-occupied">0</span>)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="defect-list">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Last 10 Defective Trailers</h3>
+                    <ul id="lastDefectedTrailers"></ul>
+                    <button id="exportDefects" class="center-button"><i class="fas fa-file-export"></i> Export Defective Trailers</button>
+                </div>
+            </div>
+
+            <div id="main-content">
+                <div id="search-container">
+                    <div id="search-input-container">
+                        <input type="text" id="searchInput" placeholder="Search Trailer">
+                        <button id="searchButton"><i class="fas fa-search"></i> Search</button>
+                    </div>
+                    <div id="searchResultContainer"></div>
+                </div>
+
+                <div id="trailer-parks">
+                    <div class="trailer-park">
+                        <h2><i class="fas fa-warehouse"></i> Upper</h2>
+                        <div id="upper-parking-lot" class="parking-lot visible"></div>
+                    </div>
+                    <div class="trailer-park">
+                        <h2><i class="fas fa-warehouse"></i> Lower</h2>
+                        <div id="lower-parking-lot" class="parking-lot visible"></div>
+                    </div>
+                </div>
+
+                <button id="exportTrailers" class="center-button"><i class="fas fa-file-export"></i> Export Trailers Data</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.13/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13/firebase-analytics.js"></script>
+
+    <!-- Include your script after Firebase SDK -->
+    <script src="script.js"></script>
+</body>
+</html>
